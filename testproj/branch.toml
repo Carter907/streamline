@@ -1,0 +1,11 @@
+[project]
+name = "My Project"
+mainClass = "Main"
+
+[build]
+sourceDir = "src"
+outDir = "build"
+
+[package]
+jarName = "app"
+executable = true

@@ -13,7 +13,7 @@ public class Compiler implements JavacExecutor {
                 projectFileModel.getBuild().sourceDir(),
                 "-d",
                 projectFileModel.getBuild().outDir(),
-                String.format("%s/%s.java", projectFileModel.getBuild().sourceDir(),
+                String.format("%s.java",
                         projectFileModel.getProject().mainClass()));
         try {
             Process p =
