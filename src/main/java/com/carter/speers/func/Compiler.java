@@ -13,11 +13,10 @@ public class Compiler implements JavacExecutor {
                 projectFileModel.getBuild().sourceDir(),
                 "-d",
                 projectFileModel.getBuild().outDir(),
-                String.format("%s.java",
+                String.format("%s/%s.java", projectFileModel.getBuild().sourceDir(),
                         projectFileModel.getProject().mainClass()));
         try {
-            Process p =
-                    processBuilder.inheritIO().start();
+            Process p = processBuilder.inheritIO().start();
 
             p.waitFor();
         } catch (IOException e) {
@@ -25,7 +24,6 @@ public class Compiler implements JavacExecutor {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
 
     }
 }

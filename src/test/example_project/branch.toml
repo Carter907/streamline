@@ -9,3 +9,4 @@ outDir = "build"
 [package]
 jarName = "app"
 executable = true
+

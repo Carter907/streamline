@@ -2,6 +2,7 @@ package com.carter.speers.func;
 
 import com.carter.speers.parse.model.ProjectFileModel;
 
+import java.io.File;
 import java.io.IOException;
 
 public class Runner implements JavacExecutor {
@@ -9,12 +10,14 @@ public class Runner implements JavacExecutor {
     public void executeCommand(ProjectFileModel projectFileModel) {
         ProcessBuilder processBuilder = new ProcessBuilder(
                 "java",
-                "-cp",
-                projectFileModel.getBuild().outDir(),
-                String.format("%s",
+                String.format("%s.java",
                         projectFileModel.getProject().mainClass()));
         try {
-            Process p = processBuilder.inheritIO().start();
+
+            Process p = processBuilder
+                    .directory(new File(projectFileModel.getBuild().sourceDir()))
+                    .inheritIO()
+                    .start();
 
             p.waitFor();
         } catch (IOException e) {

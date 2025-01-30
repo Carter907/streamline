@@ -52,14 +52,6 @@ public class Main {
             ;
         } catch (ParseException e) {
             System.out.println("Error parsing command line: " + e.getMessage());
-
-            // Show appropriate help based on subcommand
-            HelpFormatter formatter = new HelpFormatter();
-            if ("run".equals(subCommand)) {
-                formatter.printHelp("program run", runOptions);
-            } else if ("build".equals(subCommand)) {
-                formatter.printHelp("program build", buildOptions);
-            }
             System.exit(1);
         }
     }
