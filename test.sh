@@ -17,4 +17,7 @@ echo "testing build..."
 
 java -jar brancher.jar build
 
+java -jar brancher.jar package
+
+echo "...packaging"
 echo "finished."
