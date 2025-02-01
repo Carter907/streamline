@@ -15,7 +15,7 @@ For now, the easiest way to run brancher is to create a jar file using the `inst
 First, clone the repo.
 
 ```
-git clone https://github.com/Carter907/brancher
+git clone https://github.com/Carter907/brancher.git
 ```
 run the installation.
 ```
