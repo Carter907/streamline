@@ -7,6 +7,5 @@ sourceDir = "src"
 outDir = "build"
 
 [package]
-jarName = "app"
+jarName = "myproject"
 executable = true
-
