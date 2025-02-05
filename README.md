@@ -9,6 +9,36 @@ With Brancher, I aim to streamline the development experience and make it as sea
 
 It’s important to note that the initial scope of this project is not to serve as a comprehensive build tool. Instead, Brancher is designed to be a user-friendly wrapper around javac, providing an approachable way for beginners to understand and appreciate the benefits of Java's existing tooling without being overwhelmed.
 
+### Insallation
+For now, the easiest way to run brancher is to create a jar file using the `install.sh` script.
+\
+First, clone the repo.
+
+```
+git clone https://github.com/Carter907/brancher.git
+```
+run the installation.
+```
+./install.sh
+```
+Follow the instructions and have fun.
+
+
+### Usage
+
+```
+brancher run
+```
+runs a project
+```
+brancher build
+```
+builds a project
+```
+brancher package
+```
+packages a project to an executable jar file
+
 ### branch.toml
 
 This file specifies certain configuration for the javac command. Here is an example:
