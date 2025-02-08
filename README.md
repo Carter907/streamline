@@ -35,9 +35,9 @@ brancher build
 ```
 builds a project
 ```
-brancher package
+brancher archive
 ```
-packages a project to an executable jar file
+archives a project to an executable jar file
 
 ### branch.toml
 
@@ -51,7 +51,7 @@ mainClass = "Main"
 sourceDir = "src"
 outDir = "build"
 
-[package]
+[archive]
 jarName = "app"
 executable = true
 ```
