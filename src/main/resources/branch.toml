@@ -6,6 +6,6 @@ mainClass = "Main"
 sourceDir = "src"
 outDir = "build"
 
-[package]
+[archive]
 jarName = "app"
 executable = true
