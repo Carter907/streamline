@@ -37,7 +37,7 @@ builds a project
 ```
 brancher archive
 ```
-archives a project to an executable jar file
+packages a project to an executable jar file
 
 ### branch.toml
 
