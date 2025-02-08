@@ -1,21 +1,17 @@
 package com.carter.speers.parse.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class ProjectFileModel {
     private Project project;
     private Build build;
-
-    @JsonProperty("package")
-    private Package aPackage;
+    private Archive archive;
 
     public ProjectFileModel() {
 
     }
-    public ProjectFileModel(Project project, Build build, Package aPackage) {
+    public ProjectFileModel(Project project, Build build, Archive archive) {
         this.project = project;
         this.build = build;
-        this.aPackage = aPackage;
+        this.archive = archive;
     }
 
     @Override
@@ -23,7 +19,7 @@ public class ProjectFileModel {
         return "ProjectFileModel{" +
                 "project=" + project +
                 ", build=" + build +
-                ", aPackage=" + aPackage +
+                ", aPackage=" + archive +
                 '}';
     }
 
@@ -43,11 +39,11 @@ public class ProjectFileModel {
         this.build = build;
     }
 
-    public Package getaPackage() {
-        return aPackage;
+    public Archive getArchive() {
+        return archive;
     }
 
-    public void setaPackage(Package aPackage) {
-        this.aPackage = aPackage;
+    public void setArchive(Archive archive) {
+        this.archive = archive;
     }
 }
