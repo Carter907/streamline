@@ -17,8 +17,8 @@ echo "testing build..."
 
 java -jar brancher.jar build
 
-echo "testing package..."
+echo "testing archive..."
 
-java -jar brancher.jar package
+java -jar brancher.jar archive
 
 echo "finished."
