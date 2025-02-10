@@ -4,6 +4,7 @@ import com.carter.speers.parse.model.ProjectFileModel;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.spi.ToolProvider;
 
 public class BrancherCommand implements JavacCommand {
 
@@ -15,29 +16,21 @@ public class BrancherCommand implements JavacCommand {
     }
 
     public void getInfo() {
-        
-    }
 
+    }
 
     @Override
     public void build() {
-        ProcessBuilder processBuilder = new ProcessBuilder(
-                "javac",
+
+        ToolProvider javac = ToolProvider.findFirst("javac").orElseThrow();
+
+        javac.run(System.out, System.err,
                 "-cp",
                 model.getBuild().sourceDir(),
                 "-d",
                 model.getBuild().outDir(),
                 String.format("%s/%s.java", model.getBuild().sourceDir(),
                         model.getProject().mainClass()));
-        try {
-            Process p = processBuilder.inheritIO().start();
-
-            p.waitFor();
-        } catch (IOException e) {
-            System.err.println(e.getMessage());
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Override
@@ -55,27 +48,15 @@ public class BrancherCommand implements JavacCommand {
                 model.getArchive().jarName());
         String mainClass = model.getProject().mainClass();
 
-        try {
-            Process p = processBuilder
-                    .command(
-                            "jar",
-                            "--create",
-                            "--file",
-                            jarName,
-                            "--main-class",
-                            mainClass, "-C",
-                            model.getBuild().outDir(),
-                            "."
-                    ).inheritIO().start();
-
-            p.waitFor();
-
-
-        } catch (IOException e) {
-            System.err.println(e.getMessage());
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        ToolProvider jar = ToolProvider.findFirst("jar").orElseThrow();
+        jar.run(System.out, System.err,
+                "--create",
+                "--file",
+                jarName,
+                "--main-class",
+                mainClass, "-C",
+                model.getBuild().outDir(),
+                ".");
     }
 
     @Override
@@ -98,7 +79,5 @@ public class BrancherCommand implements JavacCommand {
             throw new RuntimeException(e);
         }
     }
-
-
 
 }

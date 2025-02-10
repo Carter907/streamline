@@ -21,4 +21,7 @@ echo "testing archive..."
 
 java -jar brancher.jar archive
 
+echo "cleaning..."
+
+rm -rf build
 echo "finished."
