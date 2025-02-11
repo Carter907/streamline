@@ -16,6 +16,7 @@ final public class ProjectTomlParser {
 
         } catch (IOException e) {
             System.err.println("IOException Occured: " + e.getCause());
+            System.exit(1);
         }
         return null;
     }

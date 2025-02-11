@@ -22,7 +22,7 @@ public class Main {
         System.arraycopy(args, 1, remainingArgs, 0, args.length - 1);
 
         BrancherCommand brancherCommand;
-        ProjectFileModel projectConfig = new ProjectFileModel();
+        ProjectFileModel projectConfig = new ProjectFileModel(null,null,null);
         try {
             projectConfig = new ProjectTomlParser()
                     .parseBranch(new File("branch.toml").toURI().toURL());
