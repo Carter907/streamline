@@ -21,6 +21,10 @@ echo "testing archive..."
 
 java -jar brancher.jar archive
 
+echo "testing archive execution..."
+
+java -jar build/lib/*.jar
+
 echo "cleaning..."
 
 rm -rf build
