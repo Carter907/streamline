@@ -6,6 +6,11 @@ public sealed abstract class ProjectCommand extends Command permits ArchiveComma
         BuildCommand {
     protected ProjectCommand(ProjectFileModel model) {
         super(model);
+        if (model == null) {
+            throw new IllegalArgumentException("Cannot call a project task without a branch.toml " +
+                    "file");
+        }
+
     }
 
     public abstract void execute();

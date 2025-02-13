@@ -15,10 +15,8 @@ final public class ProjectTomlReader {
             return mapper.readValue(file, ProjectFileModel.class);
 
         } catch (IOException e) {
-            System.err.println("IOException Occurred: " + e.getMessage());
-            System.exit(1);
+            return null;
         }
-        return null;
     }
 
 }

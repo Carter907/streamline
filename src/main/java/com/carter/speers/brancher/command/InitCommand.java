@@ -13,7 +13,7 @@ public final class InitCommand extends FreeCommand {
 
     private ProjectFileModel promptDetails() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("project name: ");
+        System.out.print("project name: ");
         String projectName = scanner.nextLine();
 
         return new ProjectFileModel(
@@ -30,9 +30,10 @@ public final class InitCommand extends FreeCommand {
 
         var projectDir = new File(model.project().name());
 
-        if (projectDir.mkdir()) {
+        if (!projectDir.mkdir()) {
             System.err.println("Failed to initialize brancher project for unknown cause.");
         }
+        System.out.printf("Created project at %s%n", model.project().name());
 
         new ProjectTomlWriter().writeFile(model,
                 projectDir.toPath().resolve("branch.toml").toFile());

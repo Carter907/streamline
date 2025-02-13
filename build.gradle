@@ -21,6 +21,7 @@ tasks.named('shadowJar', ShadowJar) {
     archiveBaseName = 'brancher'
     archiveClassifier = ''
     archiveVersion = ''
+
 }
 
 dependencies {
