@@ -1,7 +1,7 @@
-package com.carter.speers.command.brancher;
+package com.carter.speers.brancher.command;
 
-import com.carter.speers.io.SourceFileWalker;
-import com.carter.speers.parse.model.ProjectFileModel;
+import com.carter.speers.brancher.io.SourceFileWalker;
+import com.carter.speers.brancher.parse.model.ProjectFileModel;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.spi.ToolProvider;
 
-public final class BuildCommand extends Command {
+public final class BuildCommand extends ProjectCommand {
     public BuildCommand(ProjectFileModel model) {
         super(model);
     }

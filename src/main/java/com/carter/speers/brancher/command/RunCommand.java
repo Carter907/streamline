@@ -1,11 +1,11 @@
-package com.carter.speers.command.brancher;
+package com.carter.speers.brancher.command;
 
-import com.carter.speers.parse.model.ProjectFileModel;
+import com.carter.speers.brancher.parse.model.ProjectFileModel;
 
 import java.io.File;
 import java.io.IOException;
 
-public final class RunCommand extends Command {
+public final class RunCommand extends ProjectCommand {
     public RunCommand(ProjectFileModel model) {
         super(model);
     }

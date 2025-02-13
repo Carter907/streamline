@@ -1,4 +1,4 @@
-package com.carter.speers.command;
+package com.carter.speers.brancher.command;
 
 public enum Task {
     BUILD,

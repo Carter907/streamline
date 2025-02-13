@@ -1,4 +1,4 @@
-package com.carter.speers.parse.model;
+package com.carter.speers.brancher.parse.model;
 
 public record Project(String name, String mainClass) {
 }

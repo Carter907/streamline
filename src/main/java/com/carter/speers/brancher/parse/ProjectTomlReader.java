@@ -1,14 +1,14 @@
-package com.carter.speers.parse;
+package com.carter.speers.brancher.parse;
 
-import com.carter.speers.parse.model.ProjectFileModel;
+import com.carter.speers.brancher.parse.model.ProjectFileModel;
 import com.fasterxml.jackson.dataformat.toml.TomlMapper;
 
+import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 
-final public class ProjectTomlParser {
+final public class ProjectTomlReader {
 
-    public ProjectFileModel parseBranch(URL file) {
+    public ProjectFileModel parseFile(File file) {
         TomlMapper mapper = new TomlMapper();
 
         try {
@@ -20,4 +20,5 @@ final public class ProjectTomlParser {
         }
         return null;
     }
+
 }

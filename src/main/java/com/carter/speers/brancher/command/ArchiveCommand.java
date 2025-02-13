@@ -1,11 +1,11 @@
-package com.carter.speers.command.brancher;
+package com.carter.speers.brancher.command;
 
-import com.carter.speers.parse.model.ProjectFileModel;
+import com.carter.speers.brancher.parse.model.ProjectFileModel;
 
 import java.io.File;
 import java.util.spi.ToolProvider;
 
-public final class ArchiveCommand extends Command {
+public final class ArchiveCommand extends ProjectCommand {
     public ArchiveCommand(ProjectFileModel model) {
         super(model);
     }
