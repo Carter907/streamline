@@ -1,11 +1,13 @@
 package com.carter.speers;
 
-import com.carter.speers.command.BrancherCommand;
+import com.carter.speers.command.Task;
+import com.carter.speers.command.brancher.Command;
 import com.carter.speers.parse.ProjectTomlParser;
 import com.carter.speers.parse.model.ProjectFileModel;
 
 import java.io.File;
 import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Main {
 
@@ -16,37 +18,24 @@ public class Main {
             System.exit(1);
         }
 
-        String task = args[0];
+        String taskStr = args[0];
 
-        String[] remainingArgs = new String[args.length - 1];
-        System.arraycopy(args, 1, remainingArgs, 0, args.length - 1);
+        Task task = Task.valueOf(taskStr.toUpperCase());
 
-        BrancherCommand brancherCommand;
-        ProjectFileModel projectConfig = new ProjectFileModel(null,null,null, null);
+
+        URL projectFile = null;
         try {
-            projectConfig = new ProjectTomlParser()
-                    .parseBranch(new File("branch.toml").toURI().toURL());
+            projectFile = new File("branch.toml").toURI().toURL();
 
         } catch (MalformedURLException ex) {
-            System.err.println("Failed to parse branch.toml: " + ex.getCause());
+            System.err.println("Failed to find branch.toml: " + ex.getMessage());
             System.exit(1);
         }
+        ProjectFileModel projectConfig = new ProjectTomlParser().parseBranch(projectFile);
 
-        brancherCommand = new BrancherCommand(projectConfig);
+        Command command = Command.from(task, projectConfig);
 
-        switch (task) {
-            case "run" -> brancherCommand.run();
-
-            case "build" -> brancherCommand.build();
-
-            case "archive" -> brancherCommand.archive();
-
-            default -> {
-                System.err.println("Unknown task: " + task);
-                System.exit(1);
-            }
-        }
-
+        command.execute();
     }
 
 
