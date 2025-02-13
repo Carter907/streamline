@@ -46,15 +46,18 @@ public final class BuildCommand extends ProjectCommand {
 
         String outPath = model.build().outDir();
         String moduleSourcePath = model.modules().moduleSrc() != null ? model.modules().moduleSrc() : model.build().srcDir();
+
         List<String> source = srcFiles.getSourceFiles().stream()
                 .map(Path::toString)
                 .toList();
+
         List<String> args = new ArrayList<>(List.of(
                 "-d",
                 outPath,
                 "--module-source-path",
                 moduleSourcePath
         ));
+
         args.addAll(source);
         javac.run(System.out, System.err, args.toArray(String[]::new));
     }
