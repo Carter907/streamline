@@ -6,7 +6,8 @@ public record ProjectFileModel(
     
     @JsonProperty("project") Project project,
     @JsonProperty("build") Build build,
-    @JsonProperty("archive") Archive archive
+    @JsonProperty("archive") Archive archive,
+    @JsonProperty("modules") Modules modules
 ) {
     
 }

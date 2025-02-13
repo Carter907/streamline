@@ -3,9 +3,13 @@ name = "My Project"
 mainClass = "Main"
 
 [build]
-sourceDir = "src"
+srcDir = "src"
 outDir = "build"
 
 [archive]
 jarName = "app"
-executable = true
+
+[modules]
+moduleSrc="src"
+mainModule="client"
+modulePath="build"

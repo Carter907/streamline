@@ -1,11 +1,15 @@
 [project]
 name = "My Project"
-mainClass = "Main"
+mainClass = "app.Main"
 
 [build]
-sourceDir = "src"
+srcDir = "src"
 outDir = "build"
 
 [archive]
 jarName = "myproject"
-executable = true
+
+[modules]
+mainModule = "app"
+moduleSrc = "src"
+modulePath = "build"
