@@ -53,6 +53,8 @@ outDir = "build"
 
 [archive]
 jarName = "app"
-executable = true
+
+[modules]
+mainModule="client"
 ```
 As you can tell, simplicity is the primary goal for this project. It may seem unnatural at first, but it will be more powerful as other features are added.
