@@ -1,4 +1,4 @@
-### burn: A Beginner-Friendly javac Wrapper
+### Burn: A Beginner-Friendly javac Wrapper
 
 
 Burn is a beginner-friendly javac wrapper designed to make Java development more accessible by simplifying complex tasks.
