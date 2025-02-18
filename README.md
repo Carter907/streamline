@@ -1,21 +1,21 @@
-### Brancher: A Beginner-Friendly javac Wrapper
+### burn: A Beginner-Friendly javac Wrapper
 
 
-Brancher is a beginner-friendly javac wrapper designed to make Java development more accessible by simplifying complex tasks.
+Burn is a beginner-friendly javac wrapper designed to make Java development more accessible by simplifying complex tasks.
 
 As a newcomer to Java, I often struggled with tools like Maven and Gradle, finding them unnecessarily complicated for basic tasks like creating an executable JAR file. These tools, while powerful, can be intimidating for beginners due to their inherent complexity and the notorious "dependency hell" that often accompanies Java development.
 
-With Brancher, I aim to streamline the development experience and make it as seamless as possible. Inspired by build tools from other ecosystems, such as `cargo` for Rust and the `go` command for Golang, I believe Java deserves an equally beginner-friendly approach to tooling.
+With burn, I aim to streamline the development experience and make it as seamless as possible. Inspired by build tools from other ecosystems, such as `cargo` for Rust and the `go` command for Golang, I believe Java deserves an equally beginner-friendly approach to tooling.
 
-It’s important to note that the initial scope of this project is not to serve as a comprehensive build tool. Instead, Brancher is designed to be a user-friendly wrapper around javac, providing an approachable way for beginners to understand and appreciate the benefits of Java's existing tooling without being overwhelmed.
+It’s important to note that the initial scope of this project is not to serve as a comprehensive build tool. Instead, burn is designed to be a user-friendly wrapper around javac, providing an approachable way for beginners to understand and appreciate the benefits of Java's existing tooling without being overwhelmed.
 
 ### Insallation
-For now, the easiest way to run brancher is to create a jar file using the `install.sh` script.
+For now, the easiest way to run burn is to create a jar file using the `install.sh` script.
 \
 First, clone the repo.
 
 ```
-git clone https://github.com/Carter907/brancher.git
+git clone https://github.com/Carter907/burn.git
 ```
 run the installation.
 ```
@@ -27,15 +27,15 @@ Follow the instructions and have fun.
 ### Usage
 
 ```
-brancher run
+burn run
 ```
 runs a project
 ```
-brancher build
+burn build
 ```
 builds a project
 ```
-brancher archive
+burn archive
 ```
 packages a project to an executable jar file
 
