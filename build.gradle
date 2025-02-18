@@ -5,6 +5,9 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
+apply from: "tasks.gradle"
+
+
 group = 'com.carter.speers.brancher'
 version = '0.0.1'
 
@@ -18,7 +21,7 @@ shadowJar {
 }
 
 tasks.named('shadowJar', ShadowJar) {
-    archiveBaseName = 'brancher'
+    archiveBaseName = 'brn'
     archiveClassifier = ''
     archiveVersion = ''
 

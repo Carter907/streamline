@@ -1,0 +1,10 @@
+task install {
+    dependsOn clean, shadowJar
+    doLast {
+        println "Executable jar located at build/libs"
+        println "Move the jar file to wherever you are comfortable with."
+        println "Create an alias for 'java -jar [path]/brn.jar'."
+        println ""
+        println "Enjoy!"
+    }
+}

@@ -31,6 +31,7 @@ public final class BuildCommand extends ProjectCommand {
             buildWithModules();
         }
     }
+
     private void buildWithModules() {
         ToolProvider javac = ToolProvider.findFirst("javac").orElseThrow();
 
