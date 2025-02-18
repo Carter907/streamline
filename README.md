@@ -27,15 +27,15 @@ Follow the instructions and have fun.
 ### Usage
 
 ```
-burn run
+brn run
 ```
 runs a project
 ```
-burn build
+brn build
 ```
 builds a project
 ```
-burn archive
+brn archive
 ```
 packages a project to an executable jar file
 
