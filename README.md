@@ -19,9 +19,9 @@ git clone https://github.com/Carter907/burn.git
 ```
 run the installation.
 ```
-./install.sh
+./gradlew install
 ```
-Follow the instructions and have fun.
+Follow the instructions to run the the brn jar.
 
 
 ### Usage
