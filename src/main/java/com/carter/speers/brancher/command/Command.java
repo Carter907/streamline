@@ -18,6 +18,7 @@ public sealed abstract class Command permits FreeCommand, ProjectCommand {
 
     public static Command from(Task task) {
 
+
         ProjectFileModel model = new ProjectTomlReader().parseFile(new File("branch.toml"));
 
         return switch (task) {

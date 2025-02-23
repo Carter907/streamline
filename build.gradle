@@ -33,8 +33,9 @@ dependencies {
 
     // https://mvnrepository.com/artifact/commons-cli/commons-cli
     implementation 'commons-cli:commons-cli:1.9.0'
-    // https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-toml
-    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-toml:2.18.2'
+    // https://mvnrepository.com/artifact/com.moandjiezana.toml/toml4j
+    implementation 'com.moandjiezana.toml:toml4j:0.7.2'
+
 }
 
 test {
