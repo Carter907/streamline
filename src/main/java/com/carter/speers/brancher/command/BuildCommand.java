@@ -33,6 +33,7 @@ public final class BuildCommand extends ProjectCommand {
     }
 
     private void buildWithModules() {
+
         ToolProvider javac = ToolProvider.findFirst("javac").orElseThrow();
 
         SourceFileWalker srcFiles = new SourceFileWalker();
@@ -60,6 +61,7 @@ public final class BuildCommand extends ProjectCommand {
         ));
 
         args.addAll(source);
+        System.out.println("javac\n" + args);
         javac.run(System.out, System.err, args.toArray(String[]::new));
     }
 }

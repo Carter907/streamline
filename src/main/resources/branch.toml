@@ -12,4 +12,4 @@ jarName = "app"
 [modules]
 moduleSrc="src"
 mainModule="client"
-modulePath="build"
+modulePath= ["build", "libs"]

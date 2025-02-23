@@ -7,17 +7,23 @@ public class Main {
 
     public static void main(String[] args) {
 
+        // check if user specified at least one command.
         if (args.length == 0) {
-            System.out.println("Please specify a task");
+            System.out.println("Please specify a command");
             System.exit(1);
         }
 
-        String taskStr = args[0];
+        // iterate through args and execute each command.
 
-        Task task = Task.valueOf(taskStr.toUpperCase());
+        for (String cmdStr : args) {
 
-        Command command = Command.from(task);
+            Task task = Task.valueOf(cmdStr.toUpperCase());
 
-        command.execute();
+            Command command = Command.from(task);
+
+            command.execute();
+        }
+
+
     }
 }
