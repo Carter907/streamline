@@ -10,7 +10,7 @@ With burn, I aim to streamline the development experience and make it as seamles
 It’s important to note that the initial scope of this project is not to serve as a comprehensive build tool. Instead, burn is designed to be a user-friendly wrapper around javac, providing an approachable way for beginners to understand and appreciate the benefits of Java's existing tooling without being overwhelmed.
 
 ### Insallation
-For now, the easiest way to run burn is to create a jar file using the `install.sh` script.
+For now, the easiest way to run burn is to create a jar file using the gradle task.
 \
 First, clone the repo.
 
@@ -19,9 +19,9 @@ git clone https://github.com/Carter907/burn.git
 ```
 run the installation.
 ```
-./install.sh
+./gradlew install
 ```
-Follow the instructions and have fun.
+Follow the instructions to run the the brn jar.
 
 
 ### Usage
