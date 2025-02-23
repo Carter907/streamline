@@ -25,6 +25,7 @@ public sealed abstract class Command permits FreeCommand, ProjectCommand {
             case RUN -> new RunCommand(model);
             case BUILD -> new BuildCommand(model);
             case ARCHIVE -> new ArchiveCommand(model);
+            case CLEAN -> new CleanCommand(model);
             case INIT -> new InitCommand();
         };
     }

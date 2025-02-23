@@ -4,5 +4,6 @@ public enum Task {
     BUILD,
     RUN,
     ARCHIVE,
+    CLEAN,
     INIT
 }
