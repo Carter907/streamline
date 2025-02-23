@@ -48,6 +48,8 @@ public final class BuildCommand extends ProjectCommand {
 
         String outPath = model.build().outDir();
         String moduleSourcePath = model.modules().moduleSrc() != null ? model.modules().moduleSrc() : model.build().srcDir();
+        String[] modulePath = model.modules().modulePath();
+
 
         List<String> source = srcFiles.getSourceFiles().stream()
                 .map(Path::toString)
@@ -56,6 +58,8 @@ public final class BuildCommand extends ProjectCommand {
         List<String> args = new ArrayList<>(List.of(
                 "-d",
                 outPath,
+                "--module-path",
+                String.join(":", modulePath),
                 "--module-source-path",
                 moduleSourcePath
         ));
