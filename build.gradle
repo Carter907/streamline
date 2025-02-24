@@ -8,7 +8,7 @@ plugins {
 apply from: "tasks.gradle"
 
 
-group = 'com.carter.speers.brancher'
+group = 'com.carter.speers.burner'
 version = '0.0.1'
 
 repositories {
@@ -16,7 +16,7 @@ repositories {
 }
 shadowJar {
     manifest {
-        attributes  'Main-Class': 'com.carter.speers.brancher.Main'
+        attributes  'Main-Class': 'com.carter.speers.burner.Main'
     }
 }
 
@@ -31,11 +31,15 @@ dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 
-    // https://mvnrepository.com/artifact/commons-cli/commons-cli
-    implementation 'commons-cli:commons-cli:1.9.0'
     // https://mvnrepository.com/artifact/com.moandjiezana.toml/toml4j
     implementation 'com.moandjiezana.toml:toml4j:0.7.2'
 
+    implementation 'info.picocli:picocli:4.7.6'
+    annotationProcessor 'info.picocli:picocli-codegen:4.7.6'
+}
+
+compileJava {
+    options.compilerArgs += ["-Aproject=${project.group}/${project.name}"]
 }
 
 test {
