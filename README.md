@@ -23,21 +23,39 @@ run the installation.
 ```
 Follow the instructions to run the the brn jar.
 
+### Project Structure
+When you use the `init` command, you create a project with some helpful defaults. This includes the following project structure:
+```
+├── branch.toml
+├── libs
+└── src
+   └── com.example
+      ├── com
+      │  └── example
+      │     └── Main.java
+      └── module-info.java
+```
+Lets go through each of this paths:
+
+`branch.toml` this is your main project file that specifies all the configuration for your project.
+This is the most important file of any burner project. You can specify paths to module resolution as well
+as the naming of each meaningful directory. You specify where you want your source code modules to be located (the default is `src`).
+
+You also specify the name of the main class (`mainClass` property). This is helpful for bundling your module into a jar.
+
+The default module name is `com.example` this should most likely be changed to whatever module name suits your needs.
+The same can be said for the package `com.example`. `com.example` is a traditional default for package naming so it was used here
+for conveniance.
 
 ### Usage
 
-```
-brn run
-```
-runs a project
-```
-brn build
-```
-builds a project
-```
-brn archive
-```
-packages a project to an executable jar file
+| command | purpose |
+| ------- | ------- |
+| **init**    | Initializes a new project |
+| **build**   | Compiles the main module of your project |
+| **run**     | Runs the compiled main module |
+| **archive** | Packages your main module to a modular executable jar file |
+| **clean**   | Removes the directory specified by `outDir` |
 
 ### branch.toml
 
