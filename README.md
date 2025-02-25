@@ -35,7 +35,7 @@ When you use the `init` command, you create a project with some helpful defaults
       │     └── Main.java
       └── module-info.java
 ```
-Lets go through each of this paths:
+Lets go through each of these paths:
 
 `branch.toml` this is your main project file that specifies all the configuration for your project.
 This is the most important file of any burner project. You can specify paths to module resolution as well
