@@ -59,7 +59,7 @@ for conveniance.
 
 ### branch.toml
 
-This file specifies certain configuration for the javac command. Here is an example:
+This file specifies certain configuration for your project. Here is an example:
 ```toml
 [project]
 name = "My Project"
