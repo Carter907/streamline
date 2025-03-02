@@ -1,4 +1,0 @@
-module app {
-
-  requires library;
-}

@@ -8,7 +8,7 @@ plugins {
 apply from: "tasks.gradle"
 
 
-group = 'com.carter.speers.burner'
+group = 'com.carter.speers.streamline'
 version = '0.0.1'
 
 repositories {
@@ -16,12 +16,12 @@ repositories {
 }
 shadowJar {
     manifest {
-        attributes  'Main-Class': 'com.carter.speers.burner.Main'
+        attributes  'Main-Class': 'com.carter.speers.streamline.Main'
     }
 }
 
 tasks.named('shadowJar', ShadowJar) {
-    archiveBaseName = 'brn'
+    archiveBaseName = 'stml'
     archiveClassifier = ''
     archiveVersion = ''
 
