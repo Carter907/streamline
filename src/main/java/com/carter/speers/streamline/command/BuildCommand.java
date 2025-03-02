@@ -1,5 +1,6 @@
 package com.carter.speers.streamline.command;
 
+import com.carter.speers.streamline.command.tools.JavacTool;
 import com.carter.speers.streamline.io.SourceFileWalker;
 import com.carter.speers.streamline.parse.model.ProjectFileModel;
 
@@ -8,7 +9,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.spi.ToolProvider;
 
 public final class BuildCommand extends ProjectCommand {
 
@@ -19,23 +19,25 @@ public final class BuildCommand extends ProjectCommand {
     public void execute(CommandContext ctx) {
 
         if (model.modules() == null) {
-            ToolProvider javac = ToolProvider.findFirst("javac").orElseThrow();
-
-            javac.run(System.out, System.err,
+            String[] args = {
                     "-cp",
                     model.build().srcDir(),
                     "-d",
                     model.build().outDir(),
                     String.format("%s/%s.java", model.build().srcDir(),
-                            model.project().mainClass()));
+                            model.project().mainClass())
+            };
+            JavacTool javac = new JavacTool(args);
+
+            javac.execute();
+
+
         } else {
             buildWithModules(ctx);
         }
     }
 
     private void buildWithModules(CommandContext ctx) {
-
-        ToolProvider javac = ToolProvider.findFirst("javac").orElseThrow();
 
         SourceFileWalker srcFiles = new SourceFileWalker();
         try {
@@ -66,8 +68,11 @@ public final class BuildCommand extends ProjectCommand {
         ));
 
         args.addAll(source);
+        JavacTool javac = new JavacTool(args.toArray(String[]::new));
+
         if (ctx.loggingEnabled())
-            System.out.println("javac\n" + args);
-        javac.run(System.out, System.err, args.toArray(String[]::new));
+            javac.logCommand();
+
+        javac.execute();
     }
 }
