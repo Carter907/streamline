@@ -1,21 +1,21 @@
-### Burner: A Beginner-Friendly javac Wrapper
+### streamline: A Beginner-Friendly javac Wrapper
 
 
-Burner is a beginner-friendly javac wrapper designed to make Java development more accessible by simplifying complex tasks.
+Streamline is a beginner-friendly javac wrapper designed to make Java development more accessible by simplifying complex tasks.
 
 As a newcomer to Java, I often struggled with tools like Maven and Gradle, finding them unnecessarily complicated for basic tasks like creating an executable JAR file. These tools, while powerful, can be intimidating for beginners due to their inherent complexity and the notorious "dependency hell" that often accompanies Java development.
 
-With Burner, I aim to streamline the development experience and make it as seamless as possible. Inspired by build tools from other ecosystems, such as `cargo` for Rust and the `go` command for Golang, I believe Java deserves an equally beginner-friendly approach to tooling.
+With Streamline, I aim to streamline the development experience and make it as seamless as possible. Inspired by build tools from other ecosystems, such as `cargo` for Rust and the `go` command for Golang, I believe Java deserves an equally beginner-friendly approach to tooling.
 
-It’s important to note that the initial scope of this project is not to serve as a comprehensive build tool. Instead, burner is designed to be a user-friendly wrapper around javac, providing an approachable way for beginners to understand and appreciate the benefits of Java's existing tooling without being overwhelmed.
+It’s important to note that the initial scope of this project is not to serve as a comprehensive build tool. Instead, Streamline is designed to be a user-friendly wrapper around javac, providing an approachable way for beginners to understand and appreciate the benefits of Java's existing tooling without being overwhelmed.
 
 ### Insallation
-For now, the easiest way to run Burner is to create a jar file using the gradle task.
+For now, the easiest way to run Streamline is to create a jar file using the gradle task.
 \
 First, clone the repo.
 
 ```
-git clone https://github.com/Carter907/burner.git
+git clone https://github.com/Carter907/streamline.git
 ```
 run the installation.
 ```
@@ -35,10 +35,10 @@ When you use the `init` command, you create a project with some helpful defaults
       │     └── Main.java
       └── module-info.java
 ```
-Lets go through each of this paths:
+Lets go through each of these paths:
 
 `branch.toml` this is your main project file that specifies all the configuration for your project.
-This is the most important file of any burner project. You can specify paths to module resolution as well
+This is the most important file of any sreamline project. You can specify paths to module resolution as well
 as the naming of each meaningful directory. You specify where you want your source code modules to be located (the default is `src`).
 
 You also specify the name of the main class (`mainClass` property). This is helpful for bundling your module into a jar.
@@ -59,7 +59,7 @@ for conveniance.
 
 ### branch.toml
 
-This file specifies certain configuration for the javac command. Here is an example:
+This file specifies certain configuration for your project. Here is an example:
 ```toml
 [project]
 name = "My Project"
