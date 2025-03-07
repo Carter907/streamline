@@ -17,7 +17,13 @@ public final class JarTool extends Tool {
     }
 
     @Override
+    public String getLogCommandString() {
+
+        return "Running: jar " + String.join(" ", args);
+    }
+
+    @Override
     public void logCommand() {
-        System.out.println("Running: jar " + String.join(" ", args));
+        System.out.println(getLogCommandString());
     }
 }

@@ -8,6 +8,7 @@ public final class JavacTool extends Tool {
     public JavacTool(String... args) {
         super(args);
     }
+
     @Override
     public void execute() {
         ToolProvider javac = ToolProvider.findFirst("javac").orElseThrow();
@@ -16,7 +17,13 @@ public final class JavacTool extends Tool {
     }
 
     @Override
+    public String getLogCommandString() {
+
+        return "Running: javac " + String.join(" ", args);
+    }
+
+    @Override
     public void logCommand() {
-        System.out.println("Running: javac" + String.join(" ", args));
+        System.out.println(getLogCommandString());
     }
 }

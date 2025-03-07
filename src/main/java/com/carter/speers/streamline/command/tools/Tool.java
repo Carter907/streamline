@@ -16,5 +16,7 @@ public sealed abstract class Tool permits JarTool, JavaTool, JavacTool {
 
     public abstract void execute();
 
+    public abstract String getLogCommandString();
+
     public abstract void logCommand();
 }

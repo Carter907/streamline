@@ -49,7 +49,13 @@ public final class JavaTool extends Tool {
     }
 
     @Override
+    public String getLogCommandString() {
+
+        return "Running: java " + String.join(" ", args);
+    }
+
+    @Override
     public void logCommand() {
-        System.out.println("Running: java " + String.join(" ", args));
+        System.out.println(getLogCommandString());
     }
 }
