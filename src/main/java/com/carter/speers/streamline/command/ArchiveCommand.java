@@ -1,11 +1,10 @@
 package com.carter.speers.streamline.command;
 
+import com.carter.speers.streamline.command.tools.JarTool;
 import com.carter.speers.streamline.parse.model.ProjectFileModel;
 
 import java.io.File;
 import java.nio.file.Path;
-import java.util.Arrays;
-import java.util.spi.ToolProvider;
 
 public final class ArchiveCommand extends ProjectCommand {
     public ArchiveCommand(ProjectFileModel model) {
@@ -39,7 +38,7 @@ public final class ArchiveCommand extends ProjectCommand {
                     .resolve(model.modules().mainModule()).toString();
         }
 
-        ToolProvider jar = ToolProvider.findFirst("jar").orElseThrow();
+
 
         String[] args = {
                 "--create",
@@ -50,11 +49,12 @@ public final class ArchiveCommand extends ProjectCommand {
                 classes,
                 "."
         };
+        JarTool jar = new JarTool(args);
 
         if (ctx.loggingEnabled())
-            System.out.println("jar\n" + Arrays.toString(args));
+            jar.logCommand();
 
-        jar.run(System.out, System.err, args);
+        jar.execute();
     }
 
 

@@ -15,12 +15,13 @@ public final class BuildCommand extends ProjectCommand {
     public BuildCommand(ProjectFileModel model) {
         super(model);
     }
+
     @Override
     public void execute(CommandContext ctx) {
 
         if (model.modules() == null) {
             String[] args = {
-                    "-cp",
+                    "-classpath",
                     model.build().srcDir(),
                     "-d",
                     model.build().outDir(),
@@ -28,6 +29,8 @@ public final class BuildCommand extends ProjectCommand {
                             model.project().mainClass())
             };
             JavacTool javac = new JavacTool(args);
+            if (ctx.loggingEnabled())
+                javac.logCommand();
 
             javac.execute();
 

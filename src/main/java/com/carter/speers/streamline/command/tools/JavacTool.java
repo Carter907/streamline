@@ -17,6 +17,6 @@ public final class JavacTool extends Tool {
 
     @Override
     public void logCommand() {
-
+        System.out.println("Running: javac" + String.join(" ", args));
     }
 }
