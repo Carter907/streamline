@@ -1,4 +1,5 @@
-### streamline: A Beginner-Friendly javac Wrapper
+### Streamline: A Beginner-Friendly javac Wrapper
+![License](https://img.shields.io/badge/license-GPL3-blue.svg) <!-- Replace with your license -->
 
 
 Streamline is a beginner-friendly javac wrapper designed to make Java development more accessible by simplifying complex tasks.
