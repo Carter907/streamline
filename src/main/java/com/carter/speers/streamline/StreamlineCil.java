@@ -11,8 +11,8 @@ import java.util.concurrent.Callable;
         description = "A simple Java build tool for simple tasks.")
 public class StreamlineCil implements Callable<Void> {
 
-    @Option(names = {"--logging", "-l"}, description = "Enable to show the underlying java tools " +
-            "commands invoked.")
+    @Option(names = {"--verbose", "-vb"}, description = "Enable to show the underlying java tool" +
+            " command invoked.")
     public Boolean logging = false;
 
     @CommandLine.Command(name = "run")
