@@ -1,4 +1,4 @@
-### Streamline: A Beginner-Friendly javac Wrapper
+### Streamline: A Simple, Beginner-Friendly Java project Build Tool
 ![License](https://img.shields.io/badge/license-GPL3-blue.svg) <!-- Replace with your license -->
 
 
