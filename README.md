@@ -48,7 +48,7 @@ You also specify the name of the main class (`mainClass` property). This is help
 
 The default module name is `com.example` this should most likely be changed to whatever module name suits your needs.
 The same can be said for the package `com.example`. `com.example` is a traditional default for package naming so it was used here
-for conveniance.
+for convenience.
 
 ### Usage
 
