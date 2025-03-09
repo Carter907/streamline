@@ -10,7 +10,7 @@ With Streamline, I aim to *streamline* the development experience and make it as
 
 This project intends to follow the principles of transparency, simplicity, and ease of use. Our mission is to create a build tool that can be used in an academic or hobby environment to facilitate learning about simple project management in Java.
 
-It’s important to note that the initial scope of this project is not to serve as a comprehensive build tool. Dependencies will still have to be manually managed. However, I think this is appropriate given the audience for this project. Streamline is unopinionated, and because of its transparency, we implore developers to use other open-source tools alongside your project, such as Make, to help facilitate your build environment.
+It’s important to note that the initial scope of this project is not to serve as a comprehensive build tool. Dependencies will still have to be manually managed. However, Streamline is unopinionated, and because of its transparency, we implore developers to use other open-source tools alongside your project, such as Make, to help facilitate your build environment.
 
 ### Insallation
 For now, the easiest way to run Streamline is to create a jar file using the gradle task.
