@@ -6,7 +6,7 @@ Streamline is a beginner-friendly build tool designed to make Java development m
 
 As a newcomer to Java, I often struggled with tools like Maven and Gradle, finding them unnecessarily complicated for basic tasks. These tools, while powerful, can be intimidating for beginners due to their inherent complexity. Modern Java build tools were made for enterprise development, and it's time the Java community saw something different. 
 
-With Streamline, I aim to *streamline* the development experience and make it as simple to use and learn from as possible. Streamline takes its use-of-use from build tools of other languages, such as `cargo` for Rust and the `go` command for Golang.
+With Streamline, I aim to *streamline* the development experience and make it as simple to use and learn from as possible. Streamline takes its ease of use from build tools of other languages, such as `cargo` for Rust and the `go` command for Golang.
 
 This project intends to follow the principles of transparency, simplicity, and ease of use. Our mission is to create a build tool that can be used in an academic or hobby environment to facilitate learning about simple project management in Java.
 
