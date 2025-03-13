@@ -82,25 +82,25 @@ for convenience.
 ### The Build File
 
 `branch.toml` is the build file for streamline. You basically just fill out the fields with whatever you want.
-```
-stml 
+
 
 ### branch.toml
 
 This file specifies certain configuration for your project. Here is an example:
 ```toml
 [project]
-name = "My Project"
-mainClass = "Main"
+name = "welp"
+mainClass = "com.example.Main"
 
 [build]
-sourceDir = "src"
+srcDir = "src"
 outDir = "build"
 
 [archive]
-jarName = "app"
+jarName = "welp"
 
 [modules]
-mainModule="client"
+mainModule = "com.example"
+modulePath = ["build", "libs"]
 ```
 As you can tell, simplicity is the primary goal for this project. It may seem unnatural at first, but it will be more powerful as other features are added.
