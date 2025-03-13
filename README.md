@@ -32,6 +32,29 @@ run the installation.
 ```
 Follow the instructions to run the the `stml` jar.
 
+### Usage
+
+| command | purpose |
+| ------- | ------- |
+| **init**    | Initializes a new project |
+| **build**   | Compiles the main module of your project |
+| **run**     | Runs the compiled main module |
+| **archive** | Packages your main module to a modular executable jar file |
+| **clean**   | Removes the directory specified by `outDir` |
+
+**Flags**
+- use the `-vb` flag if you want to see the exact jdk binary command invocation for that specific task.
+
+### Getting Started
+
+to create a new project
+```sh
+stml init
+```
+cd into the newly created project
+
+have a look at [Usage](README.md#usage) for a list of other commands once you've created your project.
+
 ### Project Structure
 When you use the `init` command, you create a project with some helpful defaults. This includes the following project structure:
 ```
@@ -56,19 +79,9 @@ The default module name is `com.example` this should most likely be changed to w
 The same can be said for the package `com.example`. `com.example` is a traditional default for package naming so it was used here
 for convenience.
 
-### Usage
+### The Build File
 
-| command | purpose |
-| ------- | ------- |
-| **init**    | Initializes a new project |
-| **build**   | Compiles the main module of your project |
-| **run**     | Runs the compiled main module |
-| **archive** | Packages your main module to a modular executable jar file |
-| **clean**   | Removes the directory specified by `outDir` |
-
-### Getting Started
-
-to create a new project
+`branch.toml` is the build file for streamline. You basically just fill out the fields with whatever you want.
 ```
 stml 
 
