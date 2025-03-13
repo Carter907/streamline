@@ -53,7 +53,7 @@ stml init
 ```
 cd into the newly created project
 
-have a look at [Usage](https://github.com/Carter907/streamline?tab=readme-ov-file#usage) for a list of other commands once you've created your project.
+have a look at [usage](https://github.com/Carter907/streamline?tab=readme-ov-file#usage) for a list of other commands once you've created your project.
 
 ### Project Structure
 When you use the `init` command, you create a project with some helpful defaults. This includes the following project structure:
