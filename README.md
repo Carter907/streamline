@@ -66,6 +66,12 @@ for convenience.
 | **archive** | Packages your main module to a modular executable jar file |
 | **clean**   | Removes the directory specified by `outDir` |
 
+### Getting Started
+
+to create a new project
+```
+stml 
+
 ### branch.toml
 
 This file specifies certain configuration for your project. Here is an example:
