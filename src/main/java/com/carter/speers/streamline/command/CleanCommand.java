@@ -21,22 +21,11 @@ public final class CleanCommand extends ProjectCommand {
             var outDir = Path.of(model.build().outDir());
 
             Files.walkFileTree(outDir, new FileVisitor<>() {
-                @Override
-                public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
-
-
-                    return FileVisitResult.CONTINUE;
-                }
-
+                
                 @Override
                 public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
                     Files.delete(file);
 
-                    return FileVisitResult.CONTINUE;
-                }
-
-                @Override
-                public FileVisitResult visitFileFailed(Path file, IOException exc) {
                     return FileVisitResult.CONTINUE;
                 }
 
