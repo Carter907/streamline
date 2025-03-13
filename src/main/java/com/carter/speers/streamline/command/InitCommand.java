@@ -4,6 +4,7 @@ import com.carter.speers.streamline.parse.ProjectTomlWriter;
 import com.carter.speers.streamline.parse.model.*;
 
 import java.io.*;
+import java.nio.file.Path;
 import java.util.Scanner;
 
 public final class InitCommand extends FreeCommand {
@@ -12,15 +13,30 @@ public final class InitCommand extends FreeCommand {
     }
 
     private ProjectFileModel promptDetails() {
+
         Scanner scanner = new Scanner(System.in);
-        System.out.print("project name: ");
+        String currDirName = Path.of(System.getProperty("user.dir")).getFileName().toString();
+
+        System.out.printf("project name: (%s) ", currDirName);
         String projectName = scanner.nextLine();
+        if (projectName.isBlank()) {
+            projectName = currDirName;
+        }
+
+        System.out.println();
+
+        String defaultModule = "com.example";
+        System.out.printf("module name: (%s) ", defaultModule);
+        String moduleName = scanner.nextLine();
+        if (moduleName.isBlank()) {
+            moduleName = defaultModule;
+        }
 
         return new ProjectFileModel(
-                new Project(projectName, "com.example.Main"),
+                new Project(projectName, String.format("%s.Main", moduleName)),
                 new Build("src", "build"),
                 new Archive(projectName),
-                new Modules(null, "com.example", new String[]{"build", "libs"})
+                new Modules(null, moduleName, new String[]{"build", "libs"})
         );
     }
 
