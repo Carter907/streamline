@@ -22,9 +22,6 @@ public final class InitCommand extends FreeCommand {
         if (projectName.isBlank()) {
             projectName = currDirName;
         }
-
-        System.out.println();
-
         String defaultModule = "com.example";
         System.out.printf("module name: (%s) ", defaultModule);
         String moduleName = scanner.nextLine();
@@ -44,6 +41,7 @@ public final class InitCommand extends FreeCommand {
     public void execute(CommandContext ctx) {
         this.model = promptDetails();
 
+        var moduleFolder = this.model.modules().mainModule().replaceAll("\\.", "/");
         var projectDir = new File(model.project().name());
         var sourceDir = new File(model.project().name()).toPath().resolve("src").toFile();
         var libs = new File(model.project().name()).toPath().resolve("libs").toFile();
@@ -52,10 +50,18 @@ public final class InitCommand extends FreeCommand {
         sourceDir.mkdir();
         libs.mkdir();
 
-        var sourceFile = new File(model.project().name()).toPath().resolve("src/com.example/com" +
-                "/example/Main.java").toFile();
-        var moduleinfoFile = new File(model.project().name()).toPath().resolve("src/com.example" +
-                "/module-info.java").toFile();
+
+        var sourceFile = new File(
+                model.project().name()
+        ).toPath().resolve(
+                "src/" + model.modules().mainModule() + "/" + moduleFolder + "/Main.java"
+        ).toFile();
+
+        var moduleinfoFile = new File(
+                model.project().name()
+        ).toPath().resolve(
+                "src/"+ model.modules().mainModule() + "/module-info.java"
+        ).toFile();
 
         sourceFile.getParentFile().mkdirs();
         moduleinfoFile.getParentFile().mkdirs();
@@ -73,8 +79,8 @@ public final class InitCommand extends FreeCommand {
             try (BufferedWriter writer = new BufferedWriter(
                     new OutputStreamWriter(new FileOutputStream(sourceFile))
             )) {
-                String source = """
-                        package com.example;
+                String source = String.format("""
+                        package %s;
                         
                         public class Main {
                             public static void main(String... args) {
@@ -82,18 +88,18 @@ public final class InitCommand extends FreeCommand {
                                 System.out.println("Hello World");
                             }
                         }
-                        """;
+                        """, model.modules().mainModule());
 
                 writer.write(source);
             }
             try (BufferedWriter writer = new BufferedWriter(
                     new OutputStreamWriter(new FileOutputStream(moduleinfoFile))
             )) {
-                String source = """
-                        module com.example {
+                String source = String.format("""
+                        module %s {
                         
                         }
-                        """;
+                        """, model.modules().mainModule());
 
                 writer.write(source);
             }
