@@ -17,8 +17,11 @@ It’s important to note that the initial scope of this project is not to serve 
    - Dependencies are placed into a special folder and added to the module path when you want to run or build the project.
 - The Java Module Platform System is proritized.
    - Modules are a great way to structure your Java project and this project works with them from the ground up.
-
+### Requirements
+- Java version >= 21
 ### Installation
+
+
 For now, the easiest way to run Streamline is to create a jar file using the gradle task.
 \
 First, clone the repo.
@@ -26,7 +29,7 @@ First, clone the repo.
 ```
 git clone https://github.com/Carter907/streamline.git
 ```
-run the installation (**Java version must be greater or equal to 21**).
+run the installation.
 ```
 ./gradlew install
 ```
