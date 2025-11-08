@@ -26,7 +26,7 @@ First, clone the repo.
 ```
 git clone https://github.com/Carter907/streamline.git
 ```
-run the installation (java --v >= 21).
+run the installation (**Java version must be greater or equal to 21**).
 ```
 ./gradlew install
 ```
